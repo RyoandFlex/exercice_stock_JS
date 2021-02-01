@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercice 3 | JS</title>
+  <style>
+    * {
+      font-family: 'futura';
+      font-size: 20px;
+      margin: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <label>Nom du produit</label><span id="erreurProduit" style="color:red; display: none;">Ce produit est déjà
+    enregistré</span><span id="erreurVide" style="color:red; display: none;">Vous devez entrer une référence</span>
+  <input type="text" id="produit">
+  <br><br>
+  <label>Quantité</label>
+  <input type="number" id="stock">
+  <br><br>
+  <label>Prix</label>
+  <input type="number" id="prix">
+  <br><br>
+  <button type="button" onclick="ajouter()">Ajouter</button>
+
+  <div id="listeProduits"></div>
+  <div id="valeurT"></div>
+  <br><br>
+
+</body>
+
+<script type="text/javascript">
+  var produits = [];
+  var valeurT = [];
+
+  function ajouter() {
+    var i;
+    var textProduit = '';
+    var newProduit = document.getElementById('produit').value;
+    var stock = document.getElementById('stock').value;
+    var prix = document.getElementById('prix').value;
+    var valeurS = stock * prix;
+
+    if (newProduit != '' && newProduit != produits.includes(newProduit)) {
+      document.getElementById('erreurProduit').style.display = "none";
+      if (!produits.includes(newProduit)) {
+
+        produits.push(newProduit)
+      }
+    } else if (newProduit = produits.includes(newProduit)) {
+      document.getElementById('erreurProduit').style.display = "inline-block";
+    } else {
+      document.getElementById('erreurVide').style.display = "inline-block";
+    }
+
+    produits.sort();
+    for (i = 0; i < produits.length; i++) {
+      textProduit += produits[i] + '<br>';
+    }
+
+    document.getElementById('listeProduits').innerHTML = 'Il y a ' + produits.length +
+      ' références dans votre inventaire, voici les noms des produits :<br>' + textProduit;
+      
+    // document.getElementById('valeurT').innerHTML = 'La valeur totale du stock est de : ' + total + ' €';
+
+
+  }
+</script>
