@@ -1,0 +1,53 @@
+* {
+  font-family: 'comic sans MS';
+  /* l๏l */
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #D5D6D7;
+  width: 80vw;
+  min-height: 95vh;
+  margin: auto;
+  margin-top: 10px;
+  padding: 10%;
+  padding-top: 10px;
+}
+
+label,
+input,
+button,
+#valeurT,
+#listeProduits {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+img {
+  margin-bottom: -30px;
+  width: 20vw;
+  align-self: center;
+}
+
+label {
+  color: black;
+  border: 2px solid #D91F23;
+}
+
+button {
+  background-color: black;
+  color: #D91F23;
+}
+
+#listeProduits,
+#messageS,
+#messageP {
+  color: black;
+  margin-top: 10px;
+}
